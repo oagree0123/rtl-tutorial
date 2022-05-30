@@ -10,7 +10,7 @@ describe("<Counter />", () => {
   it("has a number add two button", () => {
     render(<Counter />);
     screen.getByText("0");
-    screen.getByText("1");
+    screen.getByText("+1");
     screen.getByText("-1");
   });
   it("increase", () => {
@@ -19,6 +19,7 @@ describe("<Counter />", () => {
     const plusButton = screen.getByText("+1");
 
     fireEvent.click(plusButton);
+    fireEvent.click(plusButton);
     expect(number.textContent).toBe("2");
   });
   it("decrease", () => {
@@ -26,6 +27,7 @@ describe("<Counter />", () => {
     const number = screen.getByText("0");
     const minusButton = screen.getByText("-1");
 
+    fireEvent.click(minusButton);
     fireEvent.click(minusButton);
     expect(number.textContent).toBe("-2");
   });
