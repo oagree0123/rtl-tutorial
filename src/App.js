@@ -1,9 +1,10 @@
-import Profile from "./Profile";
+import Counter from "./Counter/Counter";
+import Profile from "./Profile/Profile";
 
 function App() {
   return (
     <div className="App">
-      <Profile username="oagree" name="오예준" />
+      <Counter />
     </div>
   );
 }
